@@ -10,7 +10,7 @@ def render_main():
         counties = json.load(demographics_data)
     return render_template('home.html', options = get_state_options(counties))
 
-@app.route("fun-fact")
+@app.route("/fun-fact")
 def render_fact():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
