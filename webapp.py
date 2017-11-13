@@ -17,7 +17,7 @@ def render_fact():
     
     state = ""
     if 'state' in request.args:
-        state = request.args['state']
+        state = request.args["state"]
         
     funFact = fun_fact(counties, state)
     
