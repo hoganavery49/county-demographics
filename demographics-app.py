@@ -14,8 +14,14 @@ def render_main():
 def render_fact():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
+    
+    state = ""
+    if 'state' in request.args:
+        state = request.args['state']
         
-    fact = fun_fact(counties, )
+    funFact = fun_fact(counties, state)
+    
+    return render_template('fun-fact.html', fact = funFact)
 
 def get_state_options(counties):
     options = ""
