@@ -26,7 +26,7 @@ def render_fact():
 def get_state_options(counties):
     options = ""
     for c in counties:
-        options += Markup("<option value=\"" + counties["State"] + "\">" + counties["State"] + "</option")
+        options += Markup("<option value=\"" + counties["State"] + "\">" + counties["State"] + "</option>")
     return options
 
 def fun_fact(counties, state):
