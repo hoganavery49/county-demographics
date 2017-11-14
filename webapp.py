@@ -25,9 +25,12 @@ def render_fact():
     return render_template('fun-fact.html', fact = funFact)
 
 def get_state_options(counties):
+    states = []
     options = ""
     for c in counties:
-        options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+        if c["State"] not in states:
+            states.append(c["State"])
+            options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     return options
 
 def fun_fact(counties, state):
