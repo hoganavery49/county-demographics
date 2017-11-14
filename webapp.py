@@ -8,6 +8,7 @@ app = Flask(__name__)
 def render_main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
+        
     return render_template('home.html', options = get_state_options(counties))
 
 @app.route("/fun-fact")
@@ -26,7 +27,7 @@ def render_fact():
 def get_state_options(counties):
     options = ""
     for c in counties:
-        options += Markup("<option value=\"" + counties["State"] + "\">" + counties["State"] + "</option>")
+        options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     return options
 
 def fun_fact(counties, state):
