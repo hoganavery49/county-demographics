@@ -37,8 +37,8 @@ def fun_fact(counties, state):
     mostSales = 0;
     county = ""
     for c in counties:
-        if c["State"] == state and c["Sales"]["Retain Sales per Capita"] > mostSales:
-            mostSales = c["Sales"]["Retain Sales per Capita"]
+        if c["State"] == state and c["Sales"]["Retail Sales per Capita"] > mostSales:
+            mostSales = c["Sales"]["Retail Sales per Capita"]
             county = c["County"]
 
     return [county, mostSales]
