@@ -41,7 +41,7 @@ def fun_fact(counties, state):
             mostSales = c["Sales"]["Retail Sales per Capita"]
             county = c["County"]
 
-    return state + "'s county with the most retail sales per capita is " + county + " with " + String(mostSales) + " sales per capita."
+    return state + "'s county with the most retail sales per capita is " + county + " with " + Str(mostSales) + " sales per capita."
 
 if __name__ =="__main__":
     app.run(debug=false, port=54321)
